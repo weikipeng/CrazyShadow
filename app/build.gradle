@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
         applicationId "com.hitomi.crazyshadow"
-        minSdkVersion 14
-        targetSdkVersion 24
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
         versionCode 1
         versionName "1.0"
     }
@@ -20,8 +20,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.1.1'
-    compile project(':cslibrary')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+//    compile 'com.android.support:appcompat-v7:24.1.1'
+    api deps.support.appCompat
+    api deps.support.v4
+    implementation project(':cslibrary')
+
+    //pengjunwei 自定义添加
+    implementation deps.stetho.core
 }
+
+

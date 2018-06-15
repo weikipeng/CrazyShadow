@@ -1,5 +1,6 @@
 package com.hitomi.cslibrary.base;
 
+
 import android.support.v4.graphics.ColorUtils;
 
 /**
